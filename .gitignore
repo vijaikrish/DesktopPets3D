@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+# build output (PyInstaller)
+build/
+dist/
+packaging/build_icons/
+*.spec.bak
+# local / test data
+pets/*/engine/tools/_probe_data/
+release/
+*.log
+.DS_Store
+Thumbs.db

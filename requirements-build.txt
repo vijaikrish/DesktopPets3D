@@ -1,0 +1,4 @@
+# Extra tools to build the stand-alone app (see docs/BUILDING.md)
+-r requirements.txt
+pyinstaller>=6.5
+pillow>=10          # makes the .ico / .icns app icons from pets/sun_conure/icon.png

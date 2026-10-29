@@ -1,0 +1,149 @@
+{
+ "schema": 1,
+ "id": "example_pet",
+ "name": "Example Pet",
+ "description": "Copy this folder to pets/<your_id>/, set id = folder name, replace the model/engine/sounds. See docs/ADDING_A_PET.md.",
+ "icon": "icon.png",
+ "model": {
+  "variants": {
+   "default": "model/pet.glb"
+  },
+  "default_variant": "default",
+  "clips": "model/animations.json"
+ },
+ "engine": {
+  "api": 1,
+  "package": "engine",
+  "factory": "create_engine",
+  "options": {}
+ },
+ "stage": {
+  "default_size": "S",
+  "sizes": {
+   "S": 130,
+   "M": 190,
+   "L": 255
+  },
+  "frame": {
+   "width": 2.0,
+   "height": 1.95,
+   "feet": 0.2
+  },
+  "model_height": 1.0,
+  "camera": {
+   "fov": 30,
+   "elevation_deg": 8
+  },
+  "idle_clip": "idle",
+  "shadow": {
+   "opacity": 0.22,
+   "size": [
+    0.6,
+    0.35
+   ]
+  }
+ },
+ "rig": {
+  "gaze": {
+   "neck_bone": "neck",
+   "head_bone": "head",
+   "eye_bones": [],
+   "neck_share": 0.4,
+   "head_yaw_max": 60,
+   "head_pitch_up": 28,
+   "head_pitch_down": 22,
+   "eye_yaw_max": 14,
+   "eye_pitch_max": 9,
+   "body_yaw_max": 30,
+   "depth": 2.4,
+   "clip_weights": {}
+  },
+  "face": {
+   "lid_bones": [],
+   "blink_clip": null,
+   "jaw_bone": null,
+   "jaw_clip": null,
+   "beak_upper_bone": null,
+   "pupil_morph": null
+  },
+  "zones": [
+   {
+    "zone": "head",
+    "bone": "head",
+    "at": [
+     0,
+     0.8,
+     0.15
+    ],
+    "r": 0.12
+   },
+   {
+    "zone": "belly",
+    "bone": "root",
+    "at": [
+     0,
+     0.3,
+     0.2
+    ],
+    "r": 0.12
+   }
+  ],
+  "anchors": {
+   "head_top": {
+    "bone": "head",
+    "at": [
+     0,
+     1.0,
+     0.1
+    ]
+   },
+   "head": {
+    "bone": "head",
+    "at": [
+     0,
+     0.8,
+     0.15
+    ]
+   },
+   "body": {
+    "bone": "root",
+    "at": [
+     0,
+     0.45,
+     0.2
+    ]
+   },
+   "feet": {
+    "bone": "root",
+    "at": [
+     0,
+     0,
+     0.1
+    ]
+   }
+  }
+ },
+ "sounds": {
+  "bank": null,
+  "vocal_categories": [],
+  "sleep_categories": [],
+  "mouth_categories": [],
+  "min_jaw_deg": 0,
+  "quiet_clips": []
+ },
+ "menu": [],
+ "fx": {
+  "scale_ref_px": 190,
+  "cooldown_s": {},
+  "tokens": {},
+  "ambient": [],
+  "levels": {},
+  "clips": {},
+  "sounds": {}
+ },
+ "panel": {
+  "meters": [],
+  "emotions": [],
+  "behaviours": {}
+ }
+}

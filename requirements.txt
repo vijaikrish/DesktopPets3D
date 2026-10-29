@@ -1,0 +1,3 @@
+# DesktopPets3D - runtime dependencies (Python 3.10 or newer)
+PySide6>=6.6        # Qt 6: windows, tray, QtWebEngine (Chromium) for the 3D view
+numpy>=1.24         # the sun conure's emotion engine

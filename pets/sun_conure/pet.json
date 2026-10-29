@@ -1,0 +1,1023 @@
+{
+ "schema": 1,
+ "id": "sun_conure",
+ "name": "Sun Conure",
+ "description": "V10 split model; v08 surface color/shading; 72 baked clips; ConureMind continuous-time CTRNN.",
+ "author": "Vijai / DesktopPets3D",
+ "icon": "icon.png",
+ "model": {
+  "variants": {
+   "female": "model/sun_conure_female.glb",
+   "male": "model/sun_conure_male.glb"
+  },
+  "default_variant": "female",
+  "clips": "model/animations.json",
+  "coordinate": {
+   "up": "+Y",
+   "forward": "-Y",
+   "unit": "metre before runtime normalization"
+  }
+ },
+ "engine": {
+  "api": 1,
+  "package": "engine",
+  "factory": "create_engine",
+  "options": {
+   "start": {
+    "bond": 0.6,
+    "exp_pet": 0.35
+   }
+  }
+ },
+ "stage": {
+  "default_size": "S",
+  "sizes": {
+   "S": 130,
+   "M": 190,
+   "L": 255
+  },
+  "frame": {
+   "width": 2.0,
+   "height": 1.95,
+   "feet": 0.2
+  },
+  "model_height": 1.0,
+  "camera": {
+   "fov": 30,
+   "elevation_deg": 8
+  },
+  "idle_clip": "idle_breathe",
+  "shadow": {
+   "opacity": 0.22,
+   "size": [
+    0.62,
+    0.34
+   ]
+  },
+  "hidden_rest_nodes": [
+   "CNR_prop_millet_grain",
+   "CNR_prop_millet_spray",
+   "CNR_prop_seed_beak",
+   "CNR_prop_seed_food",
+   "CNR_prop_shells"
+  ]
+ },
+ "rig": {
+  "gaze": {
+   "neck_bone": "neck",
+   "head_bone": "head",
+   "eye_bones": [
+    "eye.L",
+    "eye.R"
+   ],
+   "neck_share": 0.4,
+   "head_yaw_max": 60,
+   "head_pitch_up": 28,
+   "head_pitch_down": 22,
+   "eye_yaw_max": 14,
+   "eye_pitch_max": 9,
+   "body_yaw_max": 30,
+   "depth": 2.4,
+   "clip_weights": {
+    "sleep": 0.0,
+    "sleepy": 0.35,
+    "preen": 0.1,
+    "scratch_belly": 0.1,
+    "beak_wipe": 0.2,
+    "fluff_shake": 0.25,
+    "rouse_feathers": 0.3,
+    "wing_stretch": 0.4,
+    "yawn": 0.3,
+    "sneeze": 0.2,
+    "head_scratched": 0.15,
+    "ask_head_scratch": 0.3,
+    "love_head_bob": 0.45,
+    "idle_look_around": 0.4,
+    "feed_sunflower_eat": 0.3,
+    "feed_millet_eat": 0.3,
+    "feed_millet_nibble": 0.3,
+    "funny_shake": 0.3,
+    "happy_dance": 0.5,
+    "sulk_turn_away": 0.0,
+    "frustrated_pace": 0.5,
+    "knock_screen": 0.5,
+    "naughty": 0.5,
+    "beak_grind": 0.6,
+    "startle_flinch": 0.5,
+    "warn_lunge": 0.6,
+    "tail_shake": 0.6,
+    "flap_takeoff": 0.5
+   }
+  },
+  "face": {
+   "lid_bones": [
+    "lid_up.L",
+    "lid_lo.L",
+    "lid_up.R",
+    "lid_lo.R"
+   ],
+   "blink_clip": "blink",
+   "jaw_bone": "jaw",
+   "jaw_clip": "squawk",
+   "beak_upper_bone": "beak_upper",
+   "pupil_morph": "pupil_small"
+  },
+  "zones": [
+   {
+    "zone": "crown",
+    "bone": "head",
+    "at": [
+     0,
+     0.94,
+     0.12
+    ],
+    "r": 0.09
+   },
+   {
+    "zone": "head",
+    "bone": "head",
+    "at": [
+     0,
+     0.83,
+     0.2
+    ],
+    "r": 0.1
+   },
+   {
+    "zone": "cheek",
+    "bone": "head",
+    "at": [
+     0.13,
+     0.72,
+     0.25
+    ],
+    "r": 0.075
+   },
+   {
+    "zone": "cheek",
+    "bone": "head",
+    "at": [
+     -0.13,
+     0.72,
+     0.25
+    ],
+    "r": 0.075
+   },
+   {
+    "zone": "beak",
+    "bone": "head",
+    "at": [
+     0,
+     0.7,
+     0.41
+    ],
+    "r": 0.07
+   },
+   {
+    "zone": "neck",
+    "bone": "neck",
+    "at": [
+     0,
+     0.58,
+     0.25
+    ],
+    "r": 0.08
+   },
+   {
+    "zone": "chest",
+    "bone": "chest",
+    "at": [
+     0,
+     0.45,
+     0.3
+    ],
+    "r": 0.1
+   },
+   {
+    "zone": "belly",
+    "bone": "spine",
+    "at": [
+     0,
+     0.27,
+     0.26
+    ],
+    "r": 0.11
+   },
+   {
+    "zone": "wing",
+    "bone": "shoulder.L",
+    "at": [
+     0.22,
+     0.4,
+     0.1
+    ],
+    "r": 0.12
+   },
+   {
+    "zone": "wing",
+    "bone": "shoulder.R",
+    "at": [
+     -0.22,
+     0.4,
+     0.1
+    ],
+    "r": 0.12
+   },
+   {
+    "zone": "feet",
+    "bone": "foot.L",
+    "at": [
+     0.12,
+     0.04,
+     0.2
+    ],
+    "r": 0.07
+   },
+   {
+    "zone": "feet",
+    "bone": "foot.R",
+    "at": [
+     -0.12,
+     0.04,
+     0.2
+    ],
+    "r": 0.07
+   },
+   {
+    "zone": "tail",
+    "bone": "tail_fan",
+    "at": [
+     0,
+     0.05,
+     -0.35
+    ],
+    "r": 0.1
+   },
+   {
+    "zone": "back",
+    "bone": "chest",
+    "at": [
+     0,
+     0.5,
+     -0.15
+    ],
+    "r": 0.12
+   }
+  ],
+  "anchors": {
+   "head_top": {
+    "bone": "head",
+    "at": [
+     0,
+     1.04,
+     0.12
+    ]
+   },
+   "head": {
+    "bone": "head",
+    "at": [
+     0,
+     0.8,
+     0.15
+    ]
+   },
+   "beak": {
+    "bone": "head",
+    "at": [
+     0,
+     0.66,
+     0.47
+    ]
+   },
+   "eye_l": {
+    "bone": "head",
+    "at": [
+     0.14,
+     0.76,
+     0.3
+    ]
+   },
+   "eye_r": {
+    "bone": "head",
+    "at": [
+     -0.14,
+     0.76,
+     0.3
+    ]
+   },
+   "body": {
+    "bone": "chest",
+    "at": [
+     0,
+     0.45,
+     0.2
+    ]
+   },
+   "feet": {
+    "bone": "root",
+    "at": [
+     0,
+     0.0,
+     0.15
+    ]
+   }
+  },
+  "lift": {
+   "bone": "root",
+   "clips": {
+    "flap_takeoff": 1.9
+   }
+  }
+ },
+ "sounds": {
+  "bank": "sounds/sound_bank.json",
+  "vocal_categories": [
+   "contact_call",
+   "squawk",
+   "alarm",
+   "excited",
+   "chirp",
+   "chatter",
+   "speech",
+   "whistle",
+   "growl"
+  ],
+  "sleep_categories": [
+   "grind",
+   "sigh"
+  ],
+  "mouth_categories": [
+   "grind",
+   "click"
+  ],
+  "min_jaw_deg": 22,
+  "jaw_deg": {
+   "chirp": 24,
+   "excited": 26,
+   "alarm": 26,
+   "whistle": 20,
+   "growl": 20,
+   "click": 18,
+   "grind": 7
+  },
+  "quiet_clips": [
+   "head_scratched",
+   "ask_head_scratch",
+   "sleep",
+   "sleepy",
+   "preen",
+   "beak_wipe",
+   "beak_grind",
+   "yawn",
+   "sneeze",
+   "feed_sunflower_eat",
+   "feed_millet_eat",
+   "feed_millet_nibble"
+  ],
+  "engine_tokens": {
+   "grind": ""
+  },
+  "clip_events": {
+   "head_scratched:grind": {
+    "sound": ""
+   },
+   "*:clack": {
+    "sound": "click",
+    "gain_db": 0,
+    "lip_sync": true
+   },
+   "*:wipe": {
+    "sound": "click",
+    "gain_db": -12,
+    "lip_sync": false,
+    "mouth": false
+   }
+  },
+  "clip_sounds": {
+   "flap_takeoff": [
+    [
+     0.38,
+     "wing_flap",
+     -3
+    ],
+    [
+     0.72,
+     "wing_flap",
+     -1
+    ],
+    [
+     1.05,
+     "wing_flap",
+     -2
+    ],
+    [
+     1.38,
+     "wing_flap",
+     -4
+    ],
+    [
+     1.72,
+     "wing_flap",
+     -3
+    ],
+    [
+     2.05,
+     "wing_flap",
+     -2
+    ],
+    [
+     2.38,
+     "wing_flap",
+     -4
+    ],
+    [
+     2.72,
+     "wing_flap",
+     -6
+    ]
+   ],
+   "beak_grind": [
+    [
+     0.4,
+     "grind",
+     -4
+    ],
+    [
+     1.4,
+     "grind",
+     -5
+    ],
+    [
+     2.3,
+     "grind",
+     -4
+    ]
+   ]
+  },
+  "_notes": "v5 beak rule: every mouth sound (vocal + grind/click) opens the beak at least min_jaw_deg (22; whistle/growl 20, click 18 - checked visible at Small size) along its loudness envelope, or is a baked event whose clip already opens the beak (squawk 30 deg, warn_lunge 26 deg). quiet_clips: the beak is busy or hidden - spontaneous mouth sounds wait up to 0.6 s, then drop. Beak grinding only plays in the beak_grind clip; the head-scratch grind (jaw 4 deg) is silent."
+ },
+ "menu": [
+  {
+   "id": "pet_session",
+   "label": "Pet (head scratch)",
+   "when": "awake"
+  },
+  {
+   "id": "poke_once",
+   "label": "Poke",
+   "when": "awake"
+  },
+  {
+   "id": "feed_sunflower",
+   "label": "Offer a sunflower seed"
+  },
+  {
+   "id": "feed_millet",
+   "label": "Offer millet"
+  },
+  {
+   "id": "play",
+   "label": "Play",
+   "when": "awake"
+  },
+  {
+   "id": "fly",
+   "label": "Fly",
+   "when": "awake"
+  }
+ ],
+ "fx": {
+  "scale_ref_px": 190,
+  "cooldown_s": {
+   "heart": 0.45,
+   "anger": 0.6,
+   "tear": 0.7,
+   "note": 0.22,
+   "zzz": 1.1,
+   "smoke": 0.3,
+   "question": 2.0,
+   "exclaim": 1.5,
+   "sweat": 0.8,
+   "call": 0.35,
+   "sparkle": 0.15,
+   "leaf": 0.35,
+   "leaf_dry": 0.6,
+   "petal": 0.3,
+   "feather": 0.5,
+   "dust": 0.3
+  },
+  "tokens": {
+   "heart": [
+    {
+     "kind": "heart"
+    }
+   ],
+   "anger": [
+    {
+     "kind": "smoke",
+     "count": 2
+    },
+    {
+     "kind": "anger"
+    }
+   ],
+   "sad": [
+    {
+     "kind": "tear"
+    }
+   ],
+   "?": [
+    {
+     "kind": "question"
+    }
+   ],
+   "!": [
+    {
+     "kind": "exclaim"
+    }
+   ],
+   "zzz": [
+    {
+     "kind": "zzz"
+    }
+   ],
+   "note": [
+    {
+     "kind": "note",
+     "count": 2
+    }
+   ],
+   "annoyed": [
+    {
+     "kind": "anger"
+    }
+   ]
+  },
+  "ambient": [
+   {
+    "when": {
+     "emotion": "happy",
+     "above": 0.6
+    },
+    "kind": "sparkle",
+    "rate_hz": 0.4
+   },
+   {
+    "when": {
+     "emotion": "affectionate",
+     "above": 0.7
+    },
+    "kind": "heart",
+    "rate_hz": 0.3
+   },
+   {
+    "when": {
+     "emotion": "playful",
+     "above": 0.55
+    },
+    "kind": "leaf",
+    "rate_hz": 0.5
+   },
+   {
+    "when": {
+     "behaviour": "play"
+    },
+    "kind": "leaf",
+    "rate_hz": 0.6
+   },
+   {
+    "when": {
+     "behaviour": "celebrate"
+    },
+    "kind": "petal",
+    "rate_hz": 0.8
+   },
+   {
+    "when": {
+     "emotion": "bored",
+     "above": 0.55
+    },
+    "kind": "leaf_dry",
+    "rate_hz": 0.25
+   },
+   {
+    "when": {
+     "emotion": "lonely",
+     "above": 0.5
+    },
+    "kind": "leaf_dry",
+    "rate_hz": 0.2
+   },
+   {
+    "when": {
+     "emotion": "angry",
+     "above": 0.55
+    },
+    "kind": "smoke",
+    "rate_hz": 0.9
+   },
+   {
+    "when": {
+     "emotion": "afraid",
+     "above": 0.5
+    },
+    "kind": "sweat",
+    "rate_hz": 0.8
+   },
+   {
+    "when": {
+     "behaviour": "sleep"
+    },
+    "kind": "zzz",
+    "rate_hz": 0.35
+   }
+  ],
+  "levels": {
+   "rain_cloud": "sad"
+  },
+  "clips": {
+   "happy_dance": [
+    {
+     "kind": "note",
+     "rate_hz": 1.5
+    },
+    {
+     "kind": "leaf",
+     "rate_hz": 1.0
+    }
+   ],
+   "happy_bounce": [
+    {
+     "kind": "petal",
+     "rate_hz": 0.8
+    }
+   ],
+   "happy_full": [
+    {
+     "kind": "sparkle",
+     "rate_hz": 1.5
+    },
+    {
+     "kind": "note",
+     "rate_hz": 0.8
+    }
+   ],
+   "talk": [
+    {
+     "kind": "note",
+     "rate_hz": 1.4
+    }
+   ],
+   "show_off_strut": [
+    {
+     "kind": "sparkle",
+     "rate_hz": 1.0
+    }
+   ],
+   "love_head_bob": [
+    {
+     "kind": "heart",
+     "rate_hz": 0.8
+    }
+   ],
+   "head_scratched": [
+    {
+     "kind": "heart",
+     "rate_hz": 0.7
+    },
+    {
+     "kind": "sparkle",
+     "rate_hz": 0.6
+    }
+   ],
+   "angry_puff": [
+    {
+     "kind": "smoke",
+     "rate_hz": 1.0
+    }
+   ],
+   "angry_full": [
+    {
+     "kind": "smoke",
+     "rate_hz": 1.6
+    },
+    {
+     "kind": "anger",
+     "rate_hz": 0.8
+    }
+   ],
+   "warn_lunge": [
+    {
+     "kind": "anger",
+     "at": 0.2
+    }
+   ],
+   "grumpy_grumble": [
+    {
+     "kind": "smoke",
+     "rate_hz": 0.6
+    }
+   ],
+   "sad_idle": [
+    {
+     "kind": "tear",
+     "rate_hz": 0.3
+    }
+   ],
+   "wing_droop": [
+    {
+     "kind": "tear",
+     "rate_hz": 0.2
+    }
+   ],
+   "lonely_call": [
+    {
+     "kind": "call",
+     "rate_hz": 0.8
+    }
+   ],
+   "squawk": [
+    {
+     "kind": "call",
+     "at": 0.1
+    }
+   ],
+   "surprised": [
+    {
+     "kind": "exclaim",
+     "at": 0.05
+    }
+   ],
+   "shocked": [
+    {
+     "kind": "exclaim",
+     "at": 0.05
+    }
+   ],
+   "curious_full": [
+    {
+     "kind": "question",
+     "at": 0.3
+    }
+   ],
+   "curious_peek": [
+    {
+     "kind": "question",
+     "at": 0.4
+    }
+   ],
+   "hop": [
+    {
+     "kind": "dust",
+     "at": 0.15
+    }
+   ],
+   "wing_flap": [
+    {
+     "kind": "feather",
+     "rate_hz": 0.6
+    }
+   ],
+   "flap_takeoff": [
+    {
+     "kind": "feather",
+     "rate_hz": 0.8
+    },
+    {
+     "kind": "dust",
+     "at": 0.1
+    }
+   ],
+   "fluff_shake": [
+    {
+     "kind": "feather",
+     "at": 0.4
+    }
+   ],
+   "rouse_feathers": [
+    {
+     "kind": "feather",
+     "at": 0.5
+    }
+   ],
+   "preen": [
+    {
+     "kind": "feather",
+     "rate_hz": 0.25
+    }
+   ],
+   "sneeze": [
+    {
+     "kind": "puff",
+     "at": 0.2
+    }
+   ],
+   "sleep": [
+    {
+     "kind": "zzz",
+     "rate_hz": 0.4
+    }
+   ]
+  },
+  "sounds": {
+   "whistle": [
+    {
+     "kind": "note",
+     "count": 2
+    }
+   ],
+   "chirp": [
+    {
+     "kind": "note"
+    }
+   ],
+   "chatter": [
+    {
+     "kind": "note"
+    }
+   ],
+   "speech": [
+    {
+     "kind": "note"
+    }
+   ],
+   "excited": [
+    {
+     "kind": "note"
+    }
+   ],
+   "contact_call": [
+    {
+     "kind": "call"
+    }
+   ],
+   "squawk": [
+    {
+     "kind": "call"
+    }
+   ],
+   "alarm": [
+    {
+     "kind": "exclaim"
+    }
+   ]
+  },
+  "petting": {}
+ },
+ "panel": {
+  "meters": [
+   {
+    "label": "Hunger",
+    "from": "drives.hunger",
+    "full": 0.6,
+    "color": "#E8A33C",
+    "levels": [
+     [
+      0.25,
+      "Full"
+     ],
+     [
+      0.55,
+      "Peckish"
+     ],
+     [
+      0.8,
+      "Hungry"
+     ],
+     [
+      1.01,
+      "Very hungry - offer a treat"
+     ]
+    ]
+   },
+   {
+    "label": "Sleep-deprived",
+    "from": "drives.sleep_debt",
+    "full": 1.0,
+    "color": "#8E7CF0",
+    "levels": [
+     [
+      0.15,
+      "Well rested"
+     ],
+     [
+      0.4,
+      "A bit tired"
+     ],
+     [
+      0.7,
+      "Grumpy - leave it alone so it can sleep"
+     ],
+     [
+      1.01,
+      "Exhausted - leave it alone so it can sleep"
+     ]
+    ]
+   }
+  ],
+  "emotions": [
+   [
+    "happy",
+    "Happy",
+    "#F2B705"
+   ],
+   [
+    "playful",
+    "Playful",
+    "#F28C28"
+   ],
+   [
+    "affectionate",
+    "Affectionate",
+    "#E86A9E"
+   ],
+   [
+    "content",
+    "Relaxed",
+    "#5DBB63"
+   ],
+   [
+    "curious",
+    "Curious",
+    "#4C9BE8"
+   ],
+   [
+    "excited",
+    "Excited",
+    "#F5D04C"
+   ],
+   [
+    "sleepy",
+    "Sleepy",
+    "#8E7CF0"
+   ],
+   [
+    "hungry",
+    "Hungry",
+    "#E8A33C"
+   ],
+   [
+    "frustrated",
+    "Frustrated",
+    "#D9822B"
+   ],
+   [
+    "angry",
+    "Angry",
+    "#E5484D"
+   ],
+   [
+    "afraid",
+    "Scared",
+    "#9AA4B2"
+   ],
+   [
+    "sad",
+    "Sad",
+    "#6C7A99"
+   ]
+  ],
+  "emotion_words": {
+   "neutral": "Calm",
+   "proud": "Proud",
+   "lonely": "Lonely",
+   "bored": "Bored",
+   "startled": "Startled",
+   "mischievous": "Mischievous"
+  },
+  "behaviours": {
+   "rest": "resting",
+   "look_around": "looking around",
+   "watch_user": "watching you",
+   "investigate": "checking something out",
+   "groom": "preening",
+   "stretch": "stretching",
+   "play": "playing",
+   "celebrate": "celebrating",
+   "show_off": "showing off",
+   "affection": "being affectionate",
+   "approach_hand": "coming to your hand",
+   "solicit_petting": "asking for a scratch",
+   "avoid_hand": "keeping away from your hand",
+   "enjoy_petting": "enjoying a head scratch",
+   "request_food": "asking for food",
+   "anticipate": "expecting a treat",
+   "contact_call": "calling for you",
+   "chatter": "chattering",
+   "wander": "wandering",
+   "exercise": "exercising its wings",
+   "mope": "moping",
+   "bored_idle": "bored",
+   "frustration": "frustrated",
+   "threaten": "warning you off",
+   "fear": "scared",
+   "startle": "startled",
+   "doze": "dozing",
+   "sleep": "asleep",
+   "mischief": "up to mischief",
+   "greet": "greeting you",
+   "feed": "eating",
+   "fly": "flying"
+  }
+ }
+}
