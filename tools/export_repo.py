@@ -45,7 +45,11 @@ def _source_files():
 def export(dest, force=False):
     """Copy file by file (updates in place: cloud-synced folders such as OneDrive refuse to delete busy folders)."""
     dest = os.path.abspath(dest)
-    if os.path.commonpath([dest, ROOT]) == ROOT:
+    try:
+        inside = os.path.commonpath([dest, ROOT]) == ROOT
+    except ValueError:                                  # different drives (Windows): certainly not inside
+        inside = False
+    if inside:
         raise SystemExit('destination must be outside the project')
     if os.path.exists(dest) and not force:
         raise SystemExit(f'{dest} exists (use --force to refresh an earlier export)')

@@ -10,6 +10,7 @@ packaging/build_icons/
 *.spec.bak
 # local / test data
 pets/*/engine/tools/_probe_data/
+tests/tmp*/
 release/
 *.log
 .DS_Store

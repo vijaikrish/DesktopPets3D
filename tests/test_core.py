@@ -40,11 +40,15 @@ class CoreTests(unittest.TestCase):
     def test_plugin_check_passes_and_catches_errors(self):
         errs, _ = check(self.pet.dir)
         self.assertEqual(errs, [])
-        with tempfile.TemporaryDirectory() as td:                         # a broken copy must be caught
-            d = os.path.join(td, 'brokenpet')
+        # A broken copy must be caught. It points back at the real files with relative paths, so it lives beside the
+        # tests (same drive as the repo on Windows - CI checks out on D:, temp is on C:) and both ends are real paths
+        # (macOS temp /var/... is a symlink to /private/var/..., which breaks a ../.. chain).
+        here = os.path.dirname(os.path.realpath(__file__))
+        with tempfile.TemporaryDirectory(dir=here) as td:
+            d = os.path.join(os.path.realpath(td), 'brokenpet')
             os.makedirs(d)
             m = json.loads(json.dumps(self.pet.m))
-            rel = lambda r: os.path.relpath(self.pet.path(r), d).replace(os.sep, '/')
+            rel = lambda r: os.path.relpath(os.path.realpath(self.pet.path(r)), d).replace(os.sep, '/')
             m['id'] = 'brokenpet'
             m['model']['variants'] = {k: rel(v) for k, v in m['model']['variants'].items()}
             m['model']['clips'] = rel(m['model']['clips'])
