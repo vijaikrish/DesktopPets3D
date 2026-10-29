@@ -1,11 +1,14 @@
-# Builds the stand-alone app for Windows (x64) and macOS (Apple Silicon) on GitHub's machines.
-# Runs on every pushed tag v* (e.g. v0.4.0) - the zips are attached to that GitHub Release - and on demand
-# (Actions tab > build > Run workflow; the zips are then under the run's "Artifacts").
+# Tests and builds the stand-alone app for Windows (x64) and macOS (Apple Silicon) on GitHub's machines.
+# - every push to main: tests + build; the zips are under the run's "Artifacts" (no release)
+# - every pushed version tag v0.4.0 / V0.4.0: the same, and the zips are attached to that GitHub Release
+# - on demand: Actions tab > build > Run workflow
+# A failing test is shown by name with its error on the run page (annotations), no need to open the raw log.
 name: build
 
 on:
   push:
-    tags: ['v*']
+    branches: [main]
+    tags: ['v*', 'V*']
   workflow_dispatch:
 
 permissions:
@@ -37,7 +40,8 @@ jobs:
       - name: Unit tests
         env:
           QT_QPA_PLATFORM: offscreen
-        run: python -m unittest discover -s tests -v
+          PYTHONFAULTHANDLER: '1'
+        run: python tools/ci_tests.py
 
       - name: Plugin check
         run: python -m app.plugin_check
